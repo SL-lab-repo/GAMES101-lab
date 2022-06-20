@@ -79,10 +79,10 @@ Eigen::Matrix4f get_projection_matrix(float eye_fov, float aspect_ratio,
     // Create the projection matrix for the given parameters.
     // Then return it.
     Eigen::Matrix4f perspective;
-    perspective << -zNear,0,0,0,
-                    0,-zNear,0,0,
-                    0,0,-(zNear+zFar),-zNear*zFar,
-                    0,0,1,0;
+    perspective << zNear,0,0,0,
+                    0,zNear,0,0,
+                    0,0,(zNear+zFar),-zNear*zFar,
+                    0,0,-1,0;
 
     projection = orthographic * perspective * projection;
 
